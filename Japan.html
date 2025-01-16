@@ -1,0 +1,136 @@
+<!-- Unit 5 Project
+Requirements
+[  ] <div> and <span>
+[  ] height: and width:
+[  ] margin: and padding: 
+[  ] Three Images
+
+Select ONE Additional Feature to Add  
+[ no ] Feature 1 - Flexbox
+[ no ] Feature 2 - Flip Card
+[ no ] Feature 3 - Navbar
+[ no ] Feature 4 - Shaking Animation
+[ no ] Feature 5 - Gradient Background
+[ no ] Feature 6 - Spotify Playlist
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Unit 5 Project</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-family: jap;
+        background-image: url("https://img.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2017/08/17/Travel/Images/japan0820.JPG?uuid=X8PjOIKMEeeeeiD6jXoNtg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: skyblue;
+        overflow: hidden;
+      }
+      li {
+        display: inline;
+      }
+      li a {
+        text-decoration: none;
+        padding: 10px;
+        color: white;
+        background-color: grey;
+      }
+      @font-face {
+        font-family: jap;
+        src: url(https://cdn.glitch.global/69fdf5bf-0c19-4ecc-b2ac-c27956bd3b63/Japan%20Daisuki.otf?v=1736520553085);
+      }
+      .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 300px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px; /* Remove this if you don't want the 3D effect */
+      }
+
+      /* This container is needed to position the front and back side */
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
+
+      /* Do an horizontal flip when you move the mouse over the flip box container */
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      /* Position the front and back side */
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+      }
+
+      /* Style the front side (fallback if image is missing) */
+      .flip-card-front {
+        background-color: #bbb;
+        color: black;
+      }
+
+      /* Style the back side */
+      .flip-card-back {
+        background-color: white;
+        color: white;
+        transform: rotateY(180deg);
+      }
+      h1 {
+        color: black;
+      }
+      p {
+        color: black;
+      }
+      .last-sentence{
+        color: lightpink
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Places I wish to Travel to</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Japan.html">Japan</a></li>
+      <li><a href="Greece.html">Greece</a></li>
+      <li><a href="Korea.html">Korea</a></li>
+    </ul>
+    <h2>Japan</h2>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img
+            src="https://sp.yimg.com/ib/th?id=OADD2.8315204049418_1PQGBFSL0NTK7OGSZE&pid=21.2&c=16&roil=0&roit=0.1079&roir=1&roib=0.8936&w=442&h=231"
+            style="width: 300px; height: 300px"
+          />
+        </div>
+        <div class="flip-card-back">
+          <h1 class="ja">Tourist spots</h1>
+          <p class="ja">
+            "To be honest i just want to visit the convenience store and go
+            shopping in Japan. But this pic is so aesthetic though."
+          </p>
+          <span class="last-sentence">
+            I hope to go to japan during japanses cherry blossom season</span
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
